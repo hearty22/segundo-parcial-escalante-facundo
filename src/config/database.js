@@ -1,19 +1,18 @@
 
-
-import { Sequelize } from '@sequelize/core';
-import { MsSqlDialect } from '@sequelize/mssql';
-
+import { Sequelize } from 'sequelize';
 export const sequelize = new Sequelize({
-  dialect: MsSqlDialect,
-  server: process.env.DB_DIALECT,
+  dialect: 'mysql',
+  server: "localhost",
   port: 3306,
-  database: process.env.DB_NAME,
+  database: "books",
   authentication: {
     type: 'default',
     options: {
-      userName: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
+      userName: "root",
+      password: ""
     },
   },
-});
+}
+
+);
 
