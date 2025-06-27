@@ -33,7 +33,7 @@ export const bookModel =  sequelize.define(
 
 );
 
-export const status = sequelize.sync({ force : true})
+export const status = sequelize.sync({ force : false})
 .then(()=>{
     console.log("conexion completa a la base de datos")
 })
