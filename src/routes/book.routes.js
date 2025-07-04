@@ -9,13 +9,13 @@ import {
 
 const router = Router();
 // GET /books 
-router.get("/", getBooks);
+router.get("/books", getBooks);
 // GET /books/:id 
-router.get("/:id", getBookById);
+router.get("/books/:id", getBookById);
 // POST /books 
-router.post("/", createBook);
+router.post("/books", createBook);
 // PUT /books/:id 
-router.put("/:id", updateBook);
+router.put("/books/:id", updateBook);
 // DELETE /books/:id 
-router.delete("/:id", deleteBook);
+router.delete("/books/:id", deleteBook);
 export default router;

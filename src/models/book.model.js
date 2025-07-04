@@ -1,43 +1,31 @@
 import { sequelize } from "../config/database.js";
 import { DataTypes, Sequelize } from "sequelize";
-
+//title, author, pages, genre,description
 export const bookModel =  sequelize.define(
-    "book",
+    "books",
     {
-        title: {
-            type:DataTypes.TEXT,
-            allowNull:false,
-
-         }
-    },
-    {
-        author: {
-            type:DataTypes.TEXT}
+        title:{
+            type: DataTypes.STRING,
+            allowNull: false
         },
-    {
-        pages: {
-            type:DataTypes.INTEGER
+        author:{
+            type:DataTypes.STRING,
+            allowNull:false
+        },
+        pages:{
+            type:DataTypes.INTEGER,
+            allowNull:false
+        },
+        genre:{
+            type:DataTypes.INTEGER,
+            allowNull:false
+        },
+        description:{
+            type: DataTypes.STRING,
+            allowNull: true
         }
-    },
-    {
-        genre: {
-            type:DataTypes.TEXT
-        }
-    },
-    {
-        description: {
-            type:DataTypes.TEXT
-        }
-    }
+    },{createdAt:false, updatedAt:false}
 
 
 );
-
-export const status = sequelize.sync({ force : false})
-.then(()=>{
-    console.log("conexion completa a la base de datos")
-})
-.catch((error)=>{
-    console.error("error al sincronizar con la base de datos:", error)
-});
 
